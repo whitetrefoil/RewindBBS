@@ -1,4 +1,4 @@
-Rewind Track
-============
+RewindBBS
+=========
 
-参见[Wiki](./RewindBug/wiki)
+参见[Wiki](./RewindBBS/wiki)
