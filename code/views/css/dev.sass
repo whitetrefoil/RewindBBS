@@ -1,0 +1,213 @@
+@charset "UTF-8"
+@import "color/original.sass"
+@import "function/functions.sass"
+
+$MainFont: Euphemia, "Segoe UI", "宋体", SimSun, sans-serif
+$MonoFont: Consolas, "新宋体", NSimSun, monospace
+
+a
+  color: $BlueText
+  text-decoration: none
+  &:hover
+    color: $Blue7
+    text-decoration: underline
+
+body
+  margin: 150px auto 0
+  padding: 0
+  background-color: $Blue4
+  font: 12px/1 Euphemia, "Segoe UI", "宋体", SimSun, sans-serif
+  color: $GrayText
+  width: 1200px
+
+  > header
+    height: 36px
+    line-height: 36px
+    background-color: $Blue7
+    position: relative
+
+    > h1
+      margin: 0
+      padding: 0
+      color: white
+      text-align: right
+
+  > .content
+    @include clearfix
+    padding: 36px 0
+    background-color: $Blue3
+
+    > .main-blocks
+      width: 800px
+      float: left
+      background-color: $Blue4
+
+    > aside
+      width: 360px
+      float: left
+      margin-left: 40px
+
+  > footer
+    clear: both
+    height: 60px
+    margin-top: 30px
+    text-align: center
+
+.block
+  position: relative
+  padding: 6px 0
+  margin-bottom: 24px
+  background-color: $Blue6
+
+  > header
+    height: 30px
+    > h2
+      width: 108px
+      height: 30px
+      line-height: 30px
+      margin: 0
+      padding: 0 0 0 12px
+      font:
+        size: 12px
+        weight: normal
+      color: $YellowText
+      position: relative
+      left: -6px
+      background-color: $Yellow6
+      cursor: pointer
+      text-shadow: 1px 1px 0 white
+      @include transition("left 0.4s ease")
+    > h2.collapsed
+      left: -18px
+      @include transition("left 0.4s ease")
+
+  > .content
+    min-height: 144px
+    background-color: $Blue1
+    overflow: auto
+    @include transition("height 0.4s ease")
+
+    > .content-wrap
+      padding: 6px
+
+    > .block-col
+      > header
+        height: 24px
+        line-height: 24px
+        padding: 0 6px
+        background-color: $Blue5
+        > h3
+          font:
+            weight: normal
+            size: 100%
+          margin: 0
+          padding: 0
+          color: $BlueText
+          text-shadow: 1px 1px 0 white
+      > .content
+        padding: 0 6px
+    > .block-content-grid
+      width: 100%
+      border-collapse: collapse
+      table-layout: fixed
+
+      > thead
+        th, td
+          height: 24px
+          vertical-align: middle
+          background-color: $Blue5
+          color: $BlueText
+          text-align: left
+          padding: 0 6px
+          font-weight: normal
+          text-shadow: 1px 1px 0 white
+      > tbody
+        &:nth-child(2n)
+          background-color: $Blue2
+        &:nth-child(2n-1)
+          background-color: $Blue3
+        &:hover
+          background-color: white
+  > .content-collapsed
+    min-height: 0 !important
+    height: 0 !important
+    @include transition("height 0.4s ease")
+
+
+
+.block:last-child
+  margin-bottom: 0
+
+#todaysTopics
+  @include clearfix
+
+  .block-col
+    width: 25%
+    float: left
+
+#postsList
+  > .content
+    min-height: 624px
+
+    > .block-content-grid
+      > thead
+        .col-title
+          width: 62.5%
+        .col-author
+          width: 12.5%
+        .col-reply-count
+          width: 12.5%
+        .col-last-reply
+          width: 12.5%
+
+      > tbody
+        th
+          font:
+            size: 14px
+            weight: normal
+          text-align: left
+        th, td
+          height: 19px
+          padding: 3px 6px
+          vertical-align: top
+          color: $Blue7
+          a
+            color: $Blue7
+        td.tags
+          > ul
+            margin: 0
+            padding: 0
+            list-style: none
+            > li
+              margin-left: 1em
+              float: left
+            > li:first-child
+              margin-left: 0
+
+        .tags
+          font-family: $MonoFont
+
+        > tr:first-child
+          th, td
+            padding: 3px 6px
+            height: 29px
+            vertical-align: bottom
+            color: $BlueText
+
+            a
+              color: $BlueText
+              &:hover
+                color: $Blue7
+
+  .tag
+    &, & a
+      color: $Blue7 !important
+
+  .systag-high
+    &, & a
+      color: $Red7 !important
+
+  .systag-medium
+    &, & a
+      color: $Magenta7 !important
+

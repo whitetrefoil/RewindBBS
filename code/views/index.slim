@@ -1,0 +1,38 @@
+section#todaysTopics.block
+  header
+    h2 今日
+  div.content
+    section.block-col
+      header
+        h3 最多参与
+      div.content
+        p 占位
+    section.block-col
+      header
+        h3 最新话题
+      div.content
+        p 占位
+    section.block-col
+      header
+        h3 与我有关
+      div.content
+        p 占位
+    section.block-col
+      header
+        h3 活跃用户
+      div.content
+        p 占位
+
+section#postsList.block
+  header
+    h2 最近更新
+  div.content
+    table.block-content-grid
+      thead
+        tr
+          th.col-title
+          th.col-author 作者
+          th.col-reply-count 回复/点击
+          th.col-last-reply 最后回复
+      - @posts.each do |post|
+        == slim :"/post/list_item", :locals => { :post => post }

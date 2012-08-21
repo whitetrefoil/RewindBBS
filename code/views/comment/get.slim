@@ -1,0 +1,8 @@
+article.comment
+  header
+    div.avatar
+      img src=get_avatar(comment.user) alt=comment.user.name width="60" height="60"
+    p.username
+      a href=user_url(comment.user) = comment.user.name
+    section.content
+      == format_html comment.content

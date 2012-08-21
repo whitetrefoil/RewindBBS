@@ -1,0 +1,260 @@
+@charset "utf-8"
+
+$TMsgBlue: #DDF4FB
+$TMsgGreen: #D1EED1
+$TMsgYellow: #FDF5D9
+$TMsgRed: #FDF5D9
+
+$Blue: #3d85cc
+$DeepBlue: #265380
+$LightBlue: #8ab8e5
+$BrightBlue: #0080FF
+
+$BrightOrangeRed: #ff2a00
+$BrightOrangeYellow: #ff7f00
+
+$Red: #cc3d3d
+$LightRed: #e58a8a
+
+$Purple: #994c99
+$LightPurple: #cca3cc
+
+$Green: #268035
+$LightGreen: #7db386
+
+$Gray: #666666
+$DeepGray: #333333
+$LightGray: #a6a6a6
+$TextGray: #4c4c4c
+
+$TextColor: $TextGray
+$LinkColor: $BrightBlue
+$LinkHoverColor: $BrightOrangeYellow
+$LinkVisitedColor: $BrightBlue
+
+$BgColor4: #D7EDFC
+$BgColor1: lighten($BgColor4, 8%)
+$BgColor2: lighten($BgColor4, 6%)
+$BgColor3: lighten($BgColor4, 3%)
+$BgColor5: darken($BgColor4, 3%)
+$BgColor6: saturate(darken($BgColor4, 6%), 5%)
+$BgColor7: saturate(darken($BgColor4, 8%), 20%)
+
+
+$BorderColor: #D0D0D0
+$MainButtonColor: #0066CC
+$SubButtonColor: $LightGray
+
+$MainFont: "Segoe UI", "Verdana", "Arial", "宋体", SimSun, sans-serif
+$InputHeight: 2.5em
+
+@mixin clearfix
+	*zoom: 1
+	&:after
+		clear: both
+		content: "."
+		display: block
+		height: 0
+		width: 0
+		visibility: hidden
+
+@mixin nomp
+	margin: 0
+	padding: 0
+
+@mixin gradient($color)
+	background:
+		image: -moz-linear-gradient($color)
+		image: -webkit-linear-gradient($color)
+		image: -o-linear-gradient($color)
+		image: -ms-linear-gradient($color)
+		image: linear-gradient($color)
+
+@mixin transition($args)
+	-moz-transition: $args
+	-webkit-transition: $args
+	-o-transition: $args
+	-ms-transition: $args
+	transition: $args
+
+@mixin box-shadow($args)
+	-moz-box-shadow: $args
+	-webkit-box-shadow: $args
+	-o-box-shadow: $args
+	-ms-box-shadow: $args
+	box-shadow: $args
+
+@mixin button($textColor, $bgColor: $SubButtonColor, $span: 10%)
+	$gradBg: bottom, $bgColor, lighten($bgColor, $span * 2)
+	$hoverGradBg: bottom, lighten($bgColor, $span / 2), lighten($bgColor, $span * 3)
+	$activeGradBg: bottom, lighten($bgColor, $span), darken($bgColor, $span)
+
+	&, &:link, &:visited
+		display: inline-block
+		_display: inline
+		padding: 0 10px
+		border: 1px solid desaturate($bgColor, $span * 2)
+		border-radius: 4px
+		background-color: $bgColor
+		@include gradient($gradBg)
+		color: $textColor
+		text-decoration: none
+		text-shadow: 0 1px 0 rgba(0, 0, 0, 0.1)
+		height: $InputHeight
+		line-height: $InputHeight
+	&:hover
+		text-dcoration: none
+		background-color: lighten($bgColor, $span / 2)
+		@include gradient($hoverGradBg)
+	&:active
+		text-dcoration: none
+		background-color: darken($bgColor, $span * 2)
+		@include gradient($activeGradBg)
+
+@mixin textbox
+	font:
+		family: $MainFont
+		size: inherit
+	height: $InputHeight
+	line-height: $InputHeight
+	padding: 0 5px
+	border: 1px solid $LightGray
+	border-radius: 4px
+	&:focus
+		border-color: lighten($BrightBlue, 20%)
+		@include box-shadow((0px 0px 2px 1px lighten($BrightBlue, 20%)))
+		outline: 0 none
+
+
+body
+	font: 75%/1 $MainFont
+	color: $TextColor
+	width: 1200px
+	margin: 0 auto
+	padding: 160px 0 0 0
+	background-color: $BgColor4
+
+a
+	&
+		color: $LinkColor
+		text-decoration: none
+	&:hover
+		color: $LinkHoverColor
+		text-decoration: underline
+	&:visited
+		color: $LinkVisitedColor
+
+#mainHeader
+	$color: $BgColor7
+	$borderColor: desaturate(darken($color, 20%), 50%)
+	$userMenuColor: #f279c2
+	$userMenuBorder: desaturate(lighten($userMenuColor, 20%), 20%)
+	position: relative
+	height: 36px
+	padding: 0 10px
+	background-color: fade-out($color, 0.5)
+	border:
+		left: 1px solid $borderColor
+		top: 1px solid $borderColor
+		right: 1px solid $borderColor
+		radius: 10px 10px 0 0
+	@include box-shadow((inset 1px 1px 1px lighten($color, 50%)))
+	h1
+		@include nomp
+		position: absolute
+		right: 0
+		bottom: 0
+
+	#userNav
+		height: 36px
+		width: 500px
+		margin-left: 10px
+		position: relative
+		display: inline-block
+		float: left
+		#avatarBg
+			display: block
+			position: absolute
+			bottom: 4px
+			width: 60px
+			height: 60px
+			border: 1px solid $BorderColor
+			@include gradient((bottom, #F0F0F0, #F7F7F7))
+			padding: 4px
+			#avatar
+				width: 100%
+				height: 100%
+			&.hover
+				$color: $Gray
+				border-color: $userMenuBorder
+				border-bottom: none
+				bottom: 5px
+				@include gradient((bottom, $userMenuColor, lighten($userMenuColor, 10%)))
+				z-index: 10
+		#userNavContent
+			display: none
+			border: 1px solid $userMenuBorder
+			position: absolute
+			top: 30px
+			left: 0px
+			width: 150px
+			color: white
+			padding: 5px 5px
+			@include gradient((top, $userMenuColor, darken($userMenuColor, 10%)))
+			@include box-shadow((2px 2px 5px rgba(0,0,0,0.5)))
+			span.info
+				padding: 5px 5px
+				display: block
+				width: auto
+				height: 100%
+			a
+				@extend span.info
+				color: white
+				&:hover
+					background-color: lighten($userMenuColor, 5%)
+					border-radius: 5px
+					@include box-shadow((inset 0px 1px 0px darken($userMenuBorder, 30%)))
+
+		#userHonor
+			$color: fade-out($BgColor1, 0.1)
+			$borderColor: desaturate(darken($color, 20%), 50%)
+			float: left
+			height: 25px
+			line-height: 25px
+			width: 300px
+			overflow: hidden
+			position: relative
+			margin-right: -300px
+			padding: 0 10px
+			top: -27px
+			left: 70px
+			background-color: $color
+			border:
+				top: 1px solid $borderColor
+				right: 1px solid $borderColor
+				radius: 0px 5px 0px 0px
+			@include box-shadow((inset 0 0 3px fade-out($borderColor, 0.3)))
+
+
+#pageContent
+	$color: $BgColor2
+	$borderColor: desaturate(darken($color, 20%), 50%)
+	background-color: $color
+	border: 1px solid $borderColor
+	border-radius: 0 0 10px 10px
+	@include box-shadow((inset 0 0 3px fade-out($borderColor, 0.3)))
+	@include clearfix
+
+.myhome
+	.myhome-content
+		width: 790px
+		float: left
+
+	.myhome-right-side
+		width: 390px
+		float: right
+
+ul, ol, li, dl, dt, dd, p
+	@include nomp
+	text-indent: none
+	list-style: none

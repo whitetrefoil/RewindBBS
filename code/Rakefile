@@ -1,0 +1,50 @@
+directory "public/js"
+directory "public/css"
+
+require 'coffee-script'
+
+# Refer http://sinatra-book.gittr.com/
+namespace :js do
+  desc "compile coffee-scripts from ./views/js to ./public/js"
+  task :compile do
+    source = "#{File.dirname(__FILE__)}/views/js/"
+    javascripts = "#{File.dirname(__FILE__)}/public/js/"
+
+    Dir.foreach(source) do |cf|
+      unless cf == '.' || cf == '..'
+        js = CoffeeScript.compile File.read("#{source}#{cf}")
+        open "#{javascripts}#{cf.gsub('.coffee', '.js')}", 'w' do |f|
+          f.puts js
+        end
+      end
+    end
+  end
+end
+
+require "sass/plugin/rack"
+namespace :css do
+  desc "compile SASS from ./views/css to ./public/css"
+  task :compile do
+    # use Sass::Plugin::Rack
+    Sass::Plugin.options[:style] = :compressed
+    Sass::Plugin.options[:template_location] = './views/css'
+    Sass::Plugin.options[:css_location] = './public/css'
+    Sass::Plugin.update_stylesheets
+  end
+end
+
+namespace :rack do
+  desc "start rack"
+  namespace :start do
+    task :development do
+      system "rackup -p 4567 -E development"
+    end
+
+    task :production do
+      system "rackup -p 4567 -E production"
+    end
+  end
+end
+
+desc "start all"
+multitask :deploy => ['js:compile', 'css:compile', 'rack:start:production']

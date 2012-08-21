@@ -1,0 +1,8 @@
+development:
+  siteinfo:
+    name: Memowind RE
+    location: http://rewindbbs
+production:
+  siteinfo:
+    name: Memowind RE
+    location: http://www.memowind.org/rewind

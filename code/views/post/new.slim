@@ -1,0 +1,22 @@
+section#newPost.block
+  header
+    h2 发新帖
+  div.content
+    form action=abs_url("/post/new") method="post"
+      p
+        label
+          | 标题：
+          input.post-editor-subject type="text" name="subject"
+      p
+        label
+          | 标签：
+          input.post-editor-tags type="text" name="tags"
+        input.post-editor-add-systag type="button" value="<< 添加系统标签 <<"
+        select.post-editor-systags
+          option
+          - @systags.each do |systag|
+            option = systag.name
+      textarea.post-editor-content name="content"
+      p.post-editor-actions
+        input#newPostSubmit type="submit" value="发帖"
+

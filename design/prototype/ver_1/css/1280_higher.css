@@ -1,0 +1,201 @@
+@charset "UTF-8";
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #dff2fd;
+  font: 12px/1 Euphemia, "Segoe UI", "宋体", SimSun, sans-serif;
+  color: #6e6e6e;
+}
+
+a {
+  color: #008add;
+  text-decoration: none;
+}
+a:hover {
+  color: #77ccff;
+  text-decoration: underline;
+}
+
+#container {
+  width: 1200px;
+  margin: 160px auto 0;
+  position: relative;
+}
+
+header#mainHeader {
+  height: 36px;
+  line-height: 36px;
+  background-color: #77ccff;
+  position: relative;
+}
+
+#content {
+  background-color: #eef8fd;
+  padding-bottom: 36px;
+  *zoom: 1;
+}
+#content:after {
+  clear: both;
+  content: ".";
+  display: block;
+  height: 0;
+  width: 0;
+  visibility: hidden;
+}
+
+.mainBlocks {
+  width: 800px;
+  float: left;
+}
+
+.secondaryBlocks {
+  width: 360px;
+  margin-left: 40px;
+  float: left;
+}
+
+.block {
+  margin-top: 36px;
+  background-color: #acdffd;
+  padding: 6px 0;
+}
+.block > header {
+  height: 30px;
+}
+.block > header .block-label {
+  width: 108px;
+  height: 30px;
+  line-height: 30px;
+  padding-left: 12px;
+  position: relative;
+  left: -6px;
+  background-color: #fddfac;
+  color: #dd8a00;
+  text-shadow: 1px 1px 0 white;
+  cursor: pointer;
+  -moz-transition: left 0.4s ease;
+  -webkit-transition: left 0.4s ease;
+  -o-transition: left 0.4s ease;
+  -ms-transition: left 0.4s ease;
+  transition: left 0.4s ease;
+}
+.block > header .block-label-collapsed {
+  left: -18px;
+}
+.block > section {
+  height: 144px;
+  color: #008add;
+  background-color: #fcfeff;
+  overflow: hidden;
+  -moz-transition: height 0.4s ease;
+  -webkit-transition: height 0.4s ease;
+  -o-transition: height 0.4s ease;
+  -ms-transition: height 0.4s ease;
+  transition: height 0.4s ease;
+}
+.block > section.collapsed {
+  height: 0 !important;
+}
+.block > section p {
+  margin: 0;
+  padding: 0;
+  line-height: 2em;
+}
+.block .block-col > header {
+  height: 24px;
+  line-height: 24px;
+  padding: 0 6px;
+  background-color: #d0ecfd;
+  color: #008add;
+  text-shadow: 1px 1px 0 white;
+}
+.block .block-col > section {
+  padding: 0 6px;
+}
+.block .block-content-grid {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+.block .block-content-grid > thead > tr > th, .block .block-content-grid > thead > tr td {
+  height: 24px;
+  vertical-align: middle;
+  background-color: #dff2fd;
+  text-align: left;
+  padding: 0 6px;
+  font-weight: normal;
+  text-shadow: 1px 1px 0 white;
+}
+.block .post-list-grid .col-title {
+  width: 62.5%;
+}
+.block .post-list-grid .col-author {
+  width: 12.5%;
+}
+.block .post-list-grid .col-reply-count {
+  width: 12.5%;
+}
+.block .post-list-grid .col-last-reply {
+  width: 12.5%;
+}
+.block .post-list-grid > tbody th {
+  font-size: 14px;
+  font-weight: normal;
+  text-align: left;
+}
+.block .post-list-grid > tbody th, .block .post-list-grid > tbody td {
+  height: 19px;
+  padding: 3px 6px;
+  vertical-align: top;
+  color: #77ccff;
+}
+.block .post-list-grid > tbody th a, .block .post-list-grid > tbody td a {
+  color: #77ccff;
+}
+.block .post-list-grid > tbody > tr:first-child th, .block .post-list-grid > tbody > tr:first-child td {
+  padding: 3px 6px;
+  height: 29px;
+  vertical-align: bottom;
+  color: #008add;
+}
+.block .post-list-grid > tbody > tr:first-child th a, .block .post-list-grid > tbody > tr:first-child td a {
+  color: #008add;
+}
+.block .post-list-grid > tbody > tr:first-child th a:hover, .block .post-list-grid > tbody > tr:first-child td a:hover {
+  color: #77ccff;
+}
+.block .post-list-grid > tbody .topic, .block .post-list-grid > tbody .topic a {
+  color: #77ccff;
+}
+.block .post-list-grid > tbody .hl-topic, .block .post-list-grid > tbody .hl-topic a {
+  color: #ff7777;
+}
+.block .post-list-grid > tbody:nth-child(2n-1) {
+  background-color: #f7fcfe;
+}
+.block .post-list-grid > tbody:nth-child(2n) {
+  background-color: #eef8fd;
+}
+.block .post-list-grid > tbody:hover {
+  background-color: white;
+}
+
+#todaysTopics {
+  *zoom: 1;
+}
+#todaysTopics:after {
+  clear: both;
+  content: ".";
+  display: block;
+  height: 0;
+  width: 0;
+  visibility: hidden;
+}
+#todaysTopics .block-col {
+  width: 25%;
+  float: left;
+}
+
+#topPosts > section {
+  height: 744px;
+}

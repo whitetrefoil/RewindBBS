@@ -1,0 +1,34 @@
+- content_for :more_scripts do
+  script type="text/javascript" src=abs_url("/js/signup.js")
+
+- content_for :more_styles do
+  link rel="stylesheet" href=abs_url("/css/signup.css")
+
+section#signUp.block
+  header
+    h2 注册新用户
+  div.content
+    div#signUpStep1.content-wrap
+      article#agreements
+        == agreements
+      p.actions
+        input#notAgreeBtn type="button" value="不同意"
+        input#doAgreeBtn type="button" value="同意"
+    div#signUpStep2.content-wrap
+      form action=abs_url('/user/new') method="post"
+        - if @message
+          p.message = @message
+        p
+          label
+            | 登录名：
+            input type="text" name="username"
+        p
+          label
+            | 密码：
+            input type="password" name="password"
+        p
+          label
+            | Email：
+            input type="text" name="email"
+        p
+          input type="submit" value="注册"

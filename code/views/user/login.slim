@@ -1,0 +1,28 @@
+section#login.block
+  header
+    h2 登录
+  div.content
+    form action=abs_url('/login') method="post"
+      - if @message
+        p.message = @message
+      p
+        label
+          | 登录名：
+          input type="text" name="username"
+      p
+        label
+          | 密码：
+          input type="password" name="password"
+      p
+        label
+          input type="checkbox" name="saveCookie" checked="checked"
+          | 记住我
+      p
+        a href=abs_url("/signup") 注册
+        input type="submit" value="登录"
+
+    form action=abs_url("/login") method="post"
+      p
+        input type="submit" value="以测试用户登录"
+        input type="hidden" name="username" value="李汐华"
+        input type="hidden" name="password" value=""

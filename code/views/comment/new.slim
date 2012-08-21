@@ -1,0 +1,8 @@
+section#newComment.block
+  header
+    h2 我说：
+  div.content
+    form action=new_comment_url(post.id) method="post"
+      textarea name="newCommentContent" id="newCommentContent"
+      p id="newCommentActions"
+        input type="submit" value="回复"

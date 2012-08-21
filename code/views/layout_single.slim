@@ -1,0 +1,15 @@
+doctype 5
+html lang="zh-cn"
+  head
+    meta charset="utf-8"
+    title #{settings.siteinfo["name"]} - RewindBBS
+    link rel="stylesheet" href=abs_url("/css/dev.css")
+    == yield_content :more_styles
+    script type="text/javascript" src=abs_url("/js/jquery-1.7.2.min.js")
+    script type="text/javascript" src=abs_url("/js/desktop.js")
+    == yield_content :more_scripts
+  body
+    header
+      h1 = settings.siteinfo["name"]
+    div.content
+      == yield

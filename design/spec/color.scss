@@ -1,0 +1,67 @@
+@charset "utf-8";
+
+// 蓝色
+$BlueBase: #77CCFF;
+$Blue7: $BlueBase;
+$Blue6: desaturate(lighten($Blue7, 10%), 5%);
+$Blue5: desaturate(lighten($Blue6, 7%), 5%);
+$Blue4: desaturate(lighten($Blue5, 3%), 4%);
+$Blue3: desaturate(lighten($Blue4, 3%), 3%);
+$Blue2: desaturate(lighten($Blue3, 2%), 2%);
+$Blue1: desaturate(lighten($Blue2, 1%), 1%);
+$BlueText: darken($BlueBase, 30%);
+
+// 品红
+$MagentaBase: #FF77BB;
+$Magenta7: $MagentaBase;
+$Magenta6: desaturate(lighten($Magenta7, 10%), 5%);
+$Magenta5: desaturate(lighten($Magenta6, 7%), 5%);
+$Magenta4: desaturate(lighten($Magenta5, 3%), 4%);
+$Magenta3: desaturate(lighten($Magenta4, 3%), 3%);
+$Magenta2: desaturate(lighten($Magenta3, 2%), 2%);
+$Magenta1: desaturate(lighten($Magenta2, 1%), 1%);
+$MagentaText: darken($MagentaBase, 30%);
+
+// 橙红色
+$RedBase: #FF7777;
+$Red7: $RedBase;
+$Red6: desaturate(lighten($Red7, 10%), 5%);
+$Red5: desaturate(lighten($Red6, 7%), 5%);
+$Red4: desaturate(lighten($Red5, 3%), 4%);
+$Red3: desaturate(lighten($Red4, 3%), 3%);
+$Red2: desaturate(lighten($Red3, 2%), 2%);
+$Red1: desaturate(lighten($Red2, 1%), 1%);
+$RedText: darken($RedBase, 30%);
+
+// 黄色
+$YellowBase: #FFCC77;
+$Yellow7: $YellowBase;
+$Yellow6: desaturate(lighten($Yellow7, 10%), 5%);
+$Yellow5: desaturate(lighten($Yellow6, 7%), 5%);
+$Yellow4: desaturate(lighten($Yellow5, 3%), 4%);
+$Yellow3: desaturate(lighten($Yellow4, 3%), 3%);
+$Yellow2: desaturate(lighten($Yellow3, 2%), 2%);
+$Yellow1: desaturate(lighten($Yellow2, 1%), 1%);
+$YellowText: darken($YellowBase, 30%);
+
+// 绿色
+$GreenBase: #77DD99;
+$Green7: $GreenBase;
+$Green6: desaturate(lighten($Green7, 15%), 5%);
+$Green5: desaturate(lighten($Green6, 9%), 5%);
+$Green4: desaturate(lighten($Green5, 3%), 4%);
+$Green3: desaturate(lighten($Green4, 3%), 3%);
+$Green2: desaturate(lighten($Green3, 2%), 2%);
+$Green1: desaturate(lighten($Green2, 1%), 1%);
+$GreenText: darken($GreenBase, 30%);
+
+// 灰色
+$GrayBase: #BBBBBB;
+$Gray7: $GrayBase;
+$Gray6: desaturate(lighten($Gray7, 10%), 5%);
+$Gray5: desaturate(lighten($Gray6, 7%), 5%);
+$Gray4: desaturate(lighten($Gray5, 3%), 4%);
+$Gray3: desaturate(lighten($Gray4, 3%), 3%);
+$Gray2: desaturate(lighten($Gray3, 2%), 2%);
+$Gray1: desaturate(lighten($Gray2, 1%), 1%);
+$GrayText: darken($GrayBase, 30%);

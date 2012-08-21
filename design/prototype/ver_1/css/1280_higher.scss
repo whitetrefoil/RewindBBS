@@ -1,0 +1,203 @@
+@charset "utf-8";
+@import "../../../spec/color.scss";
+@import "functions.scss";
+
+body {
+	margin: 0;
+	padding: 0;
+	background-color: $Blue4;
+	font: 12px/1 Euphemia, "Segoe UI", "宋体", SimSun, sans-serif;
+	color: $GrayText;
+}
+a {
+	color: $BlueText;
+	text-decoration: none;
+
+	&:hover {
+		color: $Blue7;
+		text-decoration: underline;
+	}
+}
+#container {
+	width: 1200px;
+	margin: 160px auto 0;
+	position: relative;
+}
+header#mainHeader {
+	height: 36px;
+	line-height: 36px;
+	background-color: $Blue7;
+	position: relative;
+}
+#content {
+	background-color: $Blue3;
+	padding-bottom: 36px;
+	@include clearfix;
+}
+.mainBlocks {
+	width: 800px;
+	float: left;
+}
+.secondaryBlocks {
+	width: 360px;
+	margin-left: 40px;
+	float: left;
+}
+.block {
+	margin-top: 36px;
+	background-color: $Blue6;
+	padding: 6px 0;
+
+	> header {
+		height: 30px;
+
+		.block-label {
+			width: 108px;
+			height: 30px;
+			line-height: 30px;
+			padding-left: 12px;
+			position: relative;
+			left: -6px;
+			background-color: $Yellow6;
+			color: $YellowText;
+			text-shadow: 1px 1px 0 white;
+			cursor: pointer;
+			@include transition("left 0.4s ease");
+		}
+		.block-label-collapsed {
+			left: -18px;
+		}
+	}
+	> section {
+		height: 144px;
+		color: $BlueText;
+		background-color: $Blue1;
+		overflow: hidden;
+		@include transition("height 0.4s ease");
+
+		&.collapsed {
+			height: 0 !important;
+		}
+
+		p {
+			margin: 0;
+			padding: 0;
+			line-height: 2em;
+		}
+	}
+	.block-col {
+		> header {
+			height: 24px;
+			line-height: 24px;
+			padding: 0 6px;
+			background-color: $Blue5;
+			color: $BlueText;
+			text-shadow: 1px 1px 0 white;
+		}
+		> section {
+			padding: 0 6px;
+		}
+	}
+	.block-content-grid {
+		width: 100%;
+		border-collapse: collapse;
+		table-layout: fixed;
+
+		> thead {
+			> tr {
+				> th, td {
+					height: 24px;
+					vertical-align: middle;
+					background-color: $Blue4;
+					text-align: left;
+					padding: 0 6px;
+					font-weight: normal;
+					text-shadow: 1px 1px 0 white;
+				}
+			}
+		}
+	}
+
+	.post-list-grid {
+		.col-title {
+			width: 62.5%
+		}
+		.col-author {
+			width: 12.5%;
+		}
+		.col-reply-count {
+			width: 12.5%;
+		}
+		.col-last-reply {
+			width: 12.5%;
+		}
+		> tbody {
+			th {
+				font: {
+					size: 14px;
+					weight: normal;
+				}
+				text-align: left;
+			}
+			th, td {
+				height: 19px;
+				padding: 3px 6px;
+				vertical-align: top;
+				color: $Blue7;
+
+				a {
+					color: $Blue7;
+				}
+			}
+			> tr:first-child {
+				th, td {
+					padding: 3px 6px;
+					height: 29px;
+					vertical-align: bottom;
+					color: $BlueText;
+
+					a {
+						color: $BlueText;
+
+						&:hover {
+							color: $Blue7;
+						}
+					}
+				}
+			}
+			.topic {
+				&, & a {
+					color: $Blue7;
+				}
+			}
+			.hl-topic {
+				&, & a {
+					color: $Red7;
+				}
+			}
+			&:nth-child(2n-1) {
+				background-color: $Blue2;
+			}
+			&:nth-child(2n) {
+				background-color: $Blue3;
+			}
+			&:hover {
+				background-color: white;
+			}
+		}
+	}
+}
+
+#todaysTopics {
+	@include clearfix;
+
+	.block-col {
+		width: 25%;
+		float: left;
+	}
+}
+#topPosts {
+	> section {
+		height: 744px;
+	}
+}

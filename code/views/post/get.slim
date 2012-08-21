@@ -1,0 +1,20 @@
+section#post.block
+  header
+    div.avatar
+      img src=get_avatar(@post.user) alt=@post.user.name width="60" height="60"
+    p.username
+      a href=user_url(@post.user) = @post.user.name
+      |  说：
+  article.content
+    h1 = @post.subject
+    == markdown @post.content
+
+- if session[:user_id]
+  == slim :"/comment/new", :locals => { :post => @post }
+
+section#comments.block
+  header
+    h2 所有回复
+  div.content
+    - @post.comments.each do |comment|
+      == slim :"/comment/get", :locals => {:comment => comment}

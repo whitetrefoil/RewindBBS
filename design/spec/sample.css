@@ -1,0 +1,117 @@
+@charset "UTF-8";
+/* 展示页面样式 - 纯色阶展示 */
+ul {
+  width: 150px;
+  float: left;
+  margin: 10px;
+  padding: 0;
+  list-style: none; }
+  ul li {
+    height: 30px;
+    margin: 10px 0; }
+
+ul.blue .c1 {
+  background-color: #fcfeff; }
+ul.blue .c2 {
+  background-color: #f7fcfe; }
+ul.blue .c3 {
+  background-color: #eef8fd; }
+ul.blue .c4 {
+  background-color: #dff2fd; }
+ul.blue .c5 {
+  background-color: #d0ecfd; }
+ul.blue .c6 {
+  background-color: #acdffd; }
+ul.blue .c7 {
+  background-color: #77ccff; }
+ul.blue .text {
+  color: #008add; }
+
+ul.magenta .c1 {
+  background-color: #fffcfd; }
+ul.magenta .c2 {
+  background-color: #fef7fb; }
+ul.magenta .c3 {
+  background-color: #fdeef6; }
+ul.magenta .c4 {
+  background-color: #fddfee; }
+ul.magenta .c5 {
+  background-color: #fdd0e6; }
+ul.magenta .c6 {
+  background-color: #fdacd5; }
+ul.magenta .c7 {
+  background-color: #ff77bb; }
+ul.magenta .text {
+  color: #dd006f; }
+
+ul.red .c1 {
+  background-color: #fffcfc; }
+ul.red .c2 {
+  background-color: #fef7f7; }
+ul.red .c3 {
+  background-color: #fdeeee; }
+ul.red .c4 {
+  background-color: #fddfdf; }
+ul.red .c5 {
+  background-color: #fdd0d0; }
+ul.red .c6 {
+  background-color: #fdacac; }
+ul.red .c7 {
+  background-color: #ff7777; }
+ul.red .text {
+  color: #dd0000; }
+
+ul.yellow .c1 {
+  background-color: #fffefc; }
+ul.yellow .c2 {
+  background-color: #fefcf7; }
+ul.yellow .c3 {
+  background-color: #fdf8ee; }
+ul.yellow .c4 {
+  background-color: #fdf2df; }
+ul.yellow .c5 {
+  background-color: #fdecd0; }
+ul.yellow .c6 {
+  background-color: #fddfac; }
+ul.yellow .c7 {
+  background-color: #ffcc77; }
+ul.yellow .text {
+  color: #dd8a00; }
+
+ul.green .c1 {
+  background-color: #fefefe; }
+ul.green .c2 {
+  background-color: #fafdfb; }
+ul.green .c3 {
+  background-color: #f3faf5; }
+ul.green .c4 {
+  background-color: #e7f6ec; }
+ul.green .c5 {
+  background-color: #dbf3e3; }
+ul.green .c6 {
+  background-color: #b7eac8; }
+ul.green .c7 {
+  background-color: #77dd99; }
+ul.green .text {
+  color: #25964b; }
+
+ul.gray .c1 {
+  background-color: #fdfdfd; }
+ul.gray .c2 {
+  background-color: #fbfbfb; }
+ul.gray .c3 {
+  background-color: #f6f6f6; }
+ul.gray .c4 {
+  background-color: #eeeeee; }
+ul.gray .c5 {
+  background-color: #e6e6e6; }
+ul.gray .c6 {
+  background-color: #d4d4d4; }
+ul.gray .c7 {
+  background-color: #bbbbbb; }
+ul.gray .text {
+  color: #6e6e6e; }
+
+/* 展示页面样式 - 最终效果展示 */
+body.design-sample {
+  background-color: #dff2fd; }

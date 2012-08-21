@@ -1,0 +1,186 @@
+@charset "utf-8";
+@import "color.scss";
+
+/* 展示页面样式 - 纯色阶展示 */
+ul {
+	width: 150px;
+	float: left;
+	margin: 10px;
+	padding: 0;
+	list-style: none;
+
+	li {
+		height: 30px;
+		margin: 10px 0;
+	}
+}
+
+ul.blue {
+	.c1 {
+		background-color: $Blue1;
+	}
+	.c2 {
+		background-color: $Blue2;
+	}
+	.c3 {
+		background-color: $Blue3;
+	}
+	.c4 {
+		background-color: $Blue4;
+	}
+	.c5 {
+		background-color: $Blue5;
+	}
+	.c6 {
+		background-color: $Blue6;
+	}
+	.c7 {
+		background-color: $Blue7;
+	}
+	.text {
+		color: $BlueText;
+	}
+}
+
+ul.magenta {
+	.c1 {
+		background-color: $Magenta1;
+	}
+	.c2 {
+		background-color: $Magenta2;
+	}
+	.c3 {
+		background-color: $Magenta3;
+	}
+	.c4 {
+		background-color: $Magenta4;
+	}
+	.c5 {
+		background-color: $Magenta5;
+	}
+	.c6 {
+		background-color: $Magenta6;
+	}
+	.c7 {
+		background-color: $Magenta7;
+	}
+	.text {
+		color: $MagentaText;
+	}
+}
+
+ul.red {
+	.c1 {
+		background-color: $Red1;
+	}
+	.c2 {
+		background-color: $Red2;
+	}
+	.c3 {
+		background-color: $Red3;
+	}
+	.c4 {
+		background-color: $Red4;
+	}
+	.c5 {
+		background-color: $Red5;
+	}
+	.c6 {
+		background-color: $Red6;
+	}
+	.c7 {
+		background-color: $Red7;
+	}
+	.text {
+		color: $RedText;
+	}
+}
+
+ul.yellow {
+	.c1 {
+		background-color: $Yellow1;
+	}
+	.c2 {
+		background-color: $Yellow2;
+	}
+	.c3 {
+		background-color: $Yellow3;
+	}
+	.c4 {
+		background-color: $Yellow4;
+	}
+	.c5 {
+		background-color: $Yellow5;
+	}
+	.c6 {
+		background-color: $Yellow6;
+	}
+	.c7 {
+		background-color: $Yellow7;
+	}
+	.text {
+		color: $YellowText;
+	}
+
+}
+
+ul.green {
+	.c1 {
+		background-color: $Green1;
+	}
+	.c2 {
+		background-color: $Green2;
+	}
+	.c3 {
+		background-color: $Green3;
+	}
+	.c4 {
+		background-color: $Green4;
+	}
+	.c5 {
+		background-color: $Green5;
+	}
+	.c6 {
+		background-color: $Green6;
+	}
+	.c7 {
+		background-color: $Green7;
+	}
+	.text {
+		color: $GreenText;
+	}
+
+}
+
+ul.gray {
+	.c1 {
+		background-color: $Gray1;
+	}
+	.c2 {
+		background-color: $Gray2;
+	}
+	.c3 {
+		background-color: $Gray3;
+	}
+	.c4 {
+		background-color: $Gray4;
+	}
+	.c5 {
+		background-color: $Gray5;
+	}
+	.c6 {
+		background-color: $Gray6;
+	}
+	.c7 {
+		background-color: $Gray7;
+	}
+	.text {
+		color: $GrayText;
+	}
+
+}
+
+/* 展示页面样式 - 最终效果展示 */
+body.design-sample {
+	background-color: $Blue4;
+}

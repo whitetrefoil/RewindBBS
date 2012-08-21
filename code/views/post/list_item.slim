@@ -1,0 +1,22 @@
+tbody
+  tr
+    th
+      a href=post_url(post) = post.subject
+    td
+      a href="javascript:void(0)" = post.user.name
+    td
+      a href="javascript:void(0)" = post.comments.length
+    td
+      a href="javascript:void(0)" = post.comments.length > 0 ? post.comments.last.user.name : "暂无回复"
+  tr
+    td.tags
+      ul
+        - post.systags.each do |systag|
+          li*{:class => "tag systag-#{systag.level.to_s}"}
+            a href="javascript:void(0)" = systag.name
+        - post.usertags.each do |usertag|
+          li.tag
+            a href="javascript:void(0)" = usertag.name
+    td = post.created_before
+    td = post.viewed_count
+    td = post.comments.length > 0 ? post.comments.last.created_before : "----年--月--日"
